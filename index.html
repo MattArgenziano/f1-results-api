@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <title>F1 Race Results</title>
+</head>
+<body>
+    <div class="container">
+        <h2>F1 Race Results Generator</h2>
+        <form>
+            <div>
+                <label for="year">Year</label>
+                <input type="number" id="year"><br>
+                <label for="round" style="margin: 0;">Round</label><sub>(Which race during the year)</sub><br>
+                <input type="number" id="round">
+            </div>
+            <div>
+                <button class="get-results">Get Results</button>
+                <button class="get-random">Get Random Result</button>
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Round</th>
+                    <th>Circuit</th>
+                    <th>Winner</th>
+                    <th>Constructor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="yearResult"></td>
+                    <td id="roundResult"></td>
+                    <td id="circuit"></td>
+                    <td id="winner"></td>
+                    <td id="constructor"></td>
+                </tr>
+            </tbody>   
+        </table>
+
+        <!-- FOR FUTURE ADDITION -->
+        <div class="hidden"> 
+            <button id="full-standings">Get Full Standings</button><br>
+            <span id="full-standings-text"></span>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Constructor</th>
+                    </tr>
+                </thead>
+                <tbody id="full-results">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
