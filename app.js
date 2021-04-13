@@ -23,13 +23,16 @@ function getResults(e){
             const circuit = document.getElementById('circuit');
             const winner = document.getElementById('winner');
             const constructor = document.getElementById('constructor');
+            const time = document.getElementById('time');
 
             yearResult.innerHTML = JSON.parse(response).MRData.RaceTable.season;
             roundResult.innerHTML = JSON.parse(response).MRData.RaceTable.round;
             circuit.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Circuit.circuitName;
             constructor.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Constructor.name;
             winner.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Driver.givenName + ' ' + JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Driver.familyName;
+            time.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Time.time;
             
+
             // JSON.parse(response).MRData.RaceTable.season;
 
 
@@ -67,13 +70,15 @@ function getRandom(e) {
             const circuit = document.getElementById('circuit');
             const winner = document.getElementById('winner');
             const constructor = document.getElementById('constructor');
+            const time = document.getElementById('time');
 
             yearResult.innerHTML = JSON.parse(response).MRData.RaceTable.season;
             roundResult.innerHTML = JSON.parse(response).MRData.RaceTable.round;
             circuit.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Circuit.circuitName;
             constructor.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Constructor.name;
             winner.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Driver.givenName + ' ' + JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Driver.familyName;
-            
+            time.innerHTML = JSON.parse(response).MRData.RaceTable.Races[0].Results[0].Time.time;
+
             // JSON.parse(response).MRData.RaceTable.season;
 
 
@@ -117,7 +122,8 @@ function getFullStandings(e){
 
                 output += "<tr>"+ "<td>" + results[i].position + "</td>";
                 output += "<td>" + results[i].Driver.givenName + ' ' + results[i].Driver.familyName + "</td>";
-                output += "<td>" + results[i].Constructor.name + "</td>" + "</tr>";
+                output += "<td>" + results[i].Constructor.name + "</td>";
+
                 document.getElementById('full-results').innerHTML = output;
             } 
 
